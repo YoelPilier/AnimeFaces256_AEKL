@@ -38,7 +38,7 @@ This repository contains an AutoencoderKL (AEKL) trained from scratch for latent
 To train or use the model from the source repository:
 
 ```bash
-git clone [https://github.com/YoelPilier/AnimeFaces256_AEKL](https://github.com/YoelPilier/AnimeFaces256_AEKL)
+git clone https://github.com/YoelPilier/AnimeFaces256_AEKL
 cd AnimeFaces256_AEKL
 pip install -r requirements.txt
 ```
