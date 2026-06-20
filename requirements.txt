@@ -6,3 +6,6 @@ numpy
 datasets
 huggingface_hub
 hf-xet
+lpips
+accelerate
+torchmetrics
