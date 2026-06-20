@@ -1,0 +1,8 @@
+torch
+torchvision
+safetensors
+einops
+numpy
+datasets
+huggingface_hub
+hf-xet
