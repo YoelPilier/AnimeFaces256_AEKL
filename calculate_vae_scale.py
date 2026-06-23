@@ -125,12 +125,14 @@ for batch in tqdm(dataloader, desc="Calculating mean and std"):
     with torch.no_grad():
         with accelerator.autocast():
             mu, logvar = model.encoder(batch)
-        total_sum += mu.sum()
-        total_sq_sum += (mu**2).sum()
-        total_count += mu.numel()
+            z = model.reparameterize(mu, logvar)
+        total_sum += z.sum()
+        total_sq_sum += (z**2).sum()
+        total_count += z.numel()
 
 mean = total_sum / total_count
 var = total_sq_sum / total_count - mean**2
+var = max(var, 1e-12)
 std = torch.sqrt(var)
 
 scale_factor = 1.0 / std
