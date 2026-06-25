@@ -9,7 +9,7 @@ This repository contains an AutoencoderKL (AEKL) trained from scratch for latent
 - **Latent Space:** `(4, 16, 16)`
 - **Components:** Encoder–Decoder with KL divergence regularization
 - **Features:** Includes attention mechanisms in latent feature extraction and uses EMA (Exponential Moving Average) weights during training for improved stability.
-- **VAE Scale Factor:** Fixed at `0.1298828125` (required for correct latent normalization)
+- **VAE Scale Factor:** Fixed at `0.04706926643848419` (required for correct latent normalization)
 - **Author:** Yoel Pilier ([ORCID](https://orcid.org/0009-0003-9014-3506)) ([GitHub](https://github.com/YoelPilier))
 
 ### Intended Purpose
@@ -99,7 +99,7 @@ class VAE(nn.Module):
             latent_size=latent_dim,
         )
 
-        self.scaling_factor = 0.1298828125
+        self.scaling_factor = 0.04706926643848419
         self.latent_dim = latent_dim
 
     def forward(self, x):

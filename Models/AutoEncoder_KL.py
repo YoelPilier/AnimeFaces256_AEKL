@@ -33,8 +33,8 @@ class VAE(nn.Module):
             num_upsamples=compression_factor,
             latent_size=latent_dim,
         )
+        self.scaling_factor = 0.04706926643848419
 
-        self.scaling_factor = 0.1298828125
         self.latent_dim = latent_dim
 
     @classmethod
